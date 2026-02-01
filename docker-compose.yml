@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     environment:
       - OLLAMA_BASE_URL=http://ollama:11434
-      - WEBUI_SECRET_KEY=ganti_dengan_kata_acak_bebas  # Wajib diganti
+      - WEBUI_SECRET_KEY=sebuah_kata_sandi_2026  # Wajib diganti
     volumes:
       - open-webui_data:/app/backend/data
     depends_on:
