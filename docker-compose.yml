@@ -24,13 +24,16 @@ services:
     restart: unless-stopped
     environment:
       - OLLAMA_BASE_URL=http://ollama:11434
+      # KUNCI UTAMA (Wajib diganti dengan string acak)
       - WEBUI_SECRET_KEY=d8s9d8s_Ac0d3my_Juar4_2026_!@#
+      # PERBAIKAN: Memaksa fitur API Key menyala di backend
+      - ENABLE_API_KEY=true
+      - ENABLE_API_KEYS=true 
     volumes:
       - open-webui_data:/app/backend/data
     depends_on:
       ollama:
         condition: service_healthy
-    # Tambahkan ini agar Dokploy lebih mudah mendeteksi port internal
     expose:
       - 8080
     networks:
